@@ -1,20 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Link } from "react-router-dom";
-
-
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardImage,
-  MDBBtn,
-  MDBRipple
-} from 'mdb-react-ui-kit';
+import PokemonThumb from '../components/PokemonThumb'
 import { fetchPokemons } from '../store/actions/actionCreator';
-// import Footer from '../components/Footer';
-// import Carousel from '../components/Carousel';
 
 export default function HomeView() {
   const pokemons = useSelector(state => {
@@ -29,26 +16,21 @@ export default function HomeView() {
 
   return (
     <div>
-      <div className="d-flex justify-content-center flex-wrap gap-3 row row-cols-1 row-cols-md-4 g-4">
-        {pokemons?.map(el => {
-          return <MDBCard className='w-25 mh-100 flex-fill'>
-            <Link to={`details/${el.name}`}>
-              <MDBBtn>
-                <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-                  <MDBCardImage className='vh-50 mw-100' src={el.imageUrl} fluid alt='...' />
-                  <a>
-                    <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
-                  </a>
-                </MDBRipple>
-                <MDBCardBody>
-                  <MDBCardTitle>{el.name}</MDBCardTitle>
-                  <MDBCardText>
-                  </MDBCardText>
-                </MDBCardBody>
-              </MDBBtn>
-            </Link>
-          </MDBCard>
-        })}
+      <div className="app-container">
+        <h1>Pokedex</h1>
+        <div className="pokemon-container">
+          <div className="all-container">
+            {pokemons?.map((pokemonStats, index) =>
+              <PokemonThumb
+                key={index}
+                id={pokemonStats.id}
+                image={pokemonStats.imageUrl}
+                name={pokemonStats.name}
+                type={pokemonStats.types[0].type.name}
+              />)}
+
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -1,3 +1,242 @@
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.fire {
+  background-color: #fd917c;
+}
+
+.grass {
+  background-color: #89f985;
+}
+
+.water {
+  background-color: #86cbfc;
+}
+
+.ghost {
+  background-color: rgb(247, 247, 247);
+}
+
+.rock {
+  background-color: rgb(148, 81, 81);
+}
+
+.electric {
+  background-color: rgb(255, 255, 161);
+}
+
+.bug {
+  background-color: #F6D6A7;
+}
+
+.poison {
+  background-color: #e0a7f6;
+}
+
+.normal {
+  background-color: #cacaca;
+}
+
+.fairy {
+  background-color: rgba(255, 192, 203, 0.863);
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 0.5rem;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  margin: 0.3rem;
+  border: 1px solid #efefef;
+  border-radius: 0.2rem;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+}
+
+h3 {
+  margin-bottom: 0.2rem;
+}
+
+.thumb-container .number {
+  border-radius: 1rem;
+  padding: 0.2rem 0.4rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.thumb-container img {
+  width: 120px;
+  height: 120px;
+}
+
+.thumb-container small {
+  text-transform: capitalize;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.detail-wrapper button {
+  color: rgb(22, 22, 22);
+  padding: .5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.185);
+}
+
+.load-more {
+  background: #f5f5f5 linear-gradient(#f5f5f5, #f1f1f1) repeat-x;
+  border-radius: 2px;
+  border: 1px solid #c6c6c6;
+  color: #444;
+  padding: 0.5rem 1.5rem;
+  min-width: 50%;
+  margin-top: 1rem;
+}
+
+.detail-container {
+  justify-content: center;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem; */
+}
+
+.detail-container nav {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.detail-container .card {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav a:hover {
+  background-color: #333;
+  color: #f8f8f8;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title {
+  font-size: 2.3rem;
+  text-align: left;
+}
+
+.id {
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.type {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+/* body {
+  font-family: Roboto, sans-serif;
+} */
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
 }
